@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional letter pad generator for Pawar Enterprises." />
+  <meta name="description" content="Professional letter pad and business letter template generator for Pawar Enterprises." />
   <title>Pawar Enterprises | Letter Pad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +25,51 @@
         <button class="btn btn-primary" id="printBtn">Print / Save PDF</button>
         <button class="btn btn-light" id="newBtn">New Letter</button>
       </div>
+
+      <section class="template-card">
+        <div class="template-heading">
+          <div>
+            <span class="eyebrow">READY FORMATS</span>
+            <strong>Choose Letter Template</strong>
+          </div>
+          <span class="template-count">23</span>
+        </div>
+        <select id="templateSelect" aria-label="Choose letter template">
+          <option value="custom">Custom / Blank Letter</option>
+          <optgroup label="Client & Project">
+            <option value="quotation_estimate">Quotation / Estimate Letter</option>
+            <option value="work_order">Work Order</option>
+            <option value="project_confirmation">Project Confirmation Letter</option>
+            <option value="work_completion_certificate">Work Completion Certificate</option>
+            <option value="client_agreement_confirmation">Client Agreement / Confirmation</option>
+            <option value="service_confirmation">Service Confirmation Letter</option>
+            <option value="site_visit_confirmation">Site Visit Confirmation</option>
+            <option value="material_requirement">Material Requirement Letter</option>
+          </optgroup>
+          <optgroup label="Payment">
+            <option value="payment_reminder">Payment Reminder Letter</option>
+            <option value="pending_payment_notice">Pending Payment Notice</option>
+            <option value="advance_payment_request">Advance Payment Request</option>
+          </optgroup>
+          <optgroup label="Vendor & Administration">
+            <option value="vendor_supplier">Vendor / Supplier Letter</option>
+            <option value="authorization_letter">Authorization Letter</option>
+            <option value="noc">No Objection Certificate (NOC)</option>
+            <option value="complaint_request">Complaint / Request Letter</option>
+            <option value="general_business">General Business Letter</option>
+          </optgroup>
+          <optgroup label="Employee & HR">
+            <option value="offer_letter">Offer Letter</option>
+            <option value="appointment_letter">Appointment Letter</option>
+            <option value="experience_letter">Experience Letter</option>
+            <option value="salary_certificate">Salary Certificate</option>
+            <option value="warning_letter">Warning Letter</option>
+            <option value="relieving_letter">Relieving Letter</option>
+            <option value="leave_approval">Leave Approval Letter</option>
+          </optgroup>
+        </select>
+        <div class="template-hint" id="templateHint">Start with a blank business letter or choose a ready format.</div>
+      </section>
 
       <div class="form-grid">
         <label>
@@ -72,7 +117,7 @@
 
         <label class="full">
           <span>Letter Body</span>
-          <textarea id="bodyText" rows="10" placeholder="Write the letter content here..."></textarea>
+          <textarea id="bodyText" rows="12" placeholder="Choose a template or write the letter content here..."></textarea>
         </label>
 
         <label>
@@ -92,7 +137,7 @@
       </div>
 
       <div class="editor-note">
-        <strong>Tip:</strong> Use “Print / Save PDF” and select <b>Save as PDF</b> in your browser for a clean A4 letter.
+        <strong>How to use:</strong> Select a ready format, edit the highlighted placeholders like <b>[Project Name]</b> or <b>[Amount]</b>, then use “Print / Save PDF” for a clean A4 letter.
       </div>
     </aside>
 
