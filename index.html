@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional letter pad generator for Pawar Enterprises." />
+  <title>Pawar Enterprises | Letter Pad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="editor-panel" id="editorPanel">
+      <div class="editor-brand">
+        <div class="mini-mark">PE</div>
+        <div>
+          <h1>Pawar Enterprises</h1>
+          <p>Letter Pad Generator</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <button class="btn btn-primary" id="printBtn">Print / Save PDF</button>
+        <button class="btn btn-light" id="newBtn">New Letter</button>
+      </div>
+
+      <div class="form-grid">
+        <label>
+          <span>Letter No.</span>
+          <div class="inline-field">
+            <input id="letterNo" type="text" />
+            <button class="icon-btn" id="regenerateId" title="Generate new letter number">↻</button>
+          </div>
+        </label>
+
+        <label>
+          <span>Date</span>
+          <input id="letterDate" type="date" />
+        </label>
+
+        <label>
+          <span>Recipient Name</span>
+          <input id="recipientName" type="text" placeholder="Mr./Ms./Dr. Name" />
+        </label>
+
+        <label>
+          <span>Company / Organization</span>
+          <input id="recipientCompany" type="text" placeholder="Company or organization" />
+        </label>
+
+        <label class="full">
+          <span>Recipient Address</span>
+          <textarea id="recipientAddress" rows="3" placeholder="Full postal address"></textarea>
+        </label>
+
+        <label class="full">
+          <span>Subject</span>
+          <input id="subject" type="text" placeholder="Subject of the letter" />
+        </label>
+
+        <label>
+          <span>Salutation</span>
+          <input id="salutation" type="text" value="Dear Sir/Madam," />
+        </label>
+
+        <label>
+          <span>Closing</span>
+          <input id="closing" type="text" value="Yours faithfully," />
+        </label>
+
+        <label class="full">
+          <span>Letter Body</span>
+          <textarea id="bodyText" rows="10" placeholder="Write the letter content here..."></textarea>
+        </label>
+
+        <label>
+          <span>Signatory Name</span>
+          <input id="signatoryName" type="text" value="Authorized Signatory" />
+        </label>
+
+        <label>
+          <span>Designation</span>
+          <input id="designation" type="text" value="Pawar Enterprises" />
+        </label>
+
+        <label class="full checkbox-row">
+          <input id="showSignatureLine" type="checkbox" checked />
+          <span>Show signature space</span>
+        </label>
+      </div>
+
+      <div class="editor-note">
+        <strong>Tip:</strong> Use “Print / Save PDF” and select <b>Save as PDF</b> in your browser for a clean A4 letter.
+      </div>
+    </aside>
+
+    <main class="preview-area">
+      <div class="preview-topbar">
+        <span>Live A4 Preview</span>
+        <span id="saveState">Draft saved</span>
+      </div>
+
+      <article class="letter-page" id="letterPage">
+        <header class="letterhead">
+          <div class="brand-block">
+            <div class="brand-mark" aria-label="Pawar Enterprises monogram">
+              <span>P</span><span>E</span>
+            </div>
+            <div class="brand-copy">
+              <h2>PAWAR ENTERPRISES</h2>
+              <p>Painting • Waterproofing • Civil Work • Plumbing • Electrical • Deep Cleaning</p>
+            </div>
+          </div>
+
+          <div class="contact-block">
+            <div><b>Call:</b> +91 88054 31424 / +91 91521 37598</div>
+            <div><b>Email:</b> pawarenterpriseulwe@gmail.com</div>
+            <div><b>Web:</b> pawarenterprise.co.in</div>
+          </div>
+        </header>
+
+        <div class="accent-line"><span></span></div>
+
+        <section class="letter-meta">
+          <div><span>Ref:</span> <strong id="pLetterNo"></strong></div>
+          <div><span>Date:</span> <strong id="pDate"></strong></div>
+        </section>
+
+        <section class="recipient-block" id="pRecipientWrap">
+          <strong id="pRecipientName"></strong>
+          <div id="pRecipientCompany"></div>
+          <div id="pRecipientAddress"></div>
+        </section>
+
+        <section class="subject-row" id="pSubjectWrap">
+          <span>Subject:</span>
+          <strong id="pSubject"></strong>
+        </section>
+
+        <section class="letter-content">
+          <p id="pSalutation" class="salutation"></p>
+          <div id="pBody" class="body-copy"></div>
+          <p id="pClosing" class="closing"></p>
+
+          <div class="signature-block" id="signatureBlock">
+            <div class="signature-space"></div>
+            <strong id="pSignatory"></strong>
+            <span id="pDesignation"></span>
+          </div>
+        </section>
+
+        <footer class="letter-footer">
+          <div class="footer-address">
+            <strong>PAWAR ENTERPRISES</strong>
+            <span>Shop No. 4, Plot No. 108, Sector 9, Suyash Apartment, Ulwe, Navi Mumbai - 410206</span>
+          </div>
+          <div class="footer-tagline">Professional work. Clear communication. Reliable delivery.</div>
+        </footer>
+      </article>
+    </main>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
